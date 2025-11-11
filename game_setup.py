@@ -33,9 +33,15 @@ def choose_random_word(word_list):
 #   if we input the word="Armageddon", the set will be {"a", "r", "m", "g", "e", "d", "o", "n"}
 #   if we input the word="Ice Cream", the set will be {"i", "c", "e", "c", "r", "a", "m"}
 
-def initialize_letters_to_be_guessed(word):
-    ...
+def initialize_letters_to_be_guessed(word:str):
+    d_list = set()
+    for letter in word:
+        if letter.isalpha():
+            d_list.update(letter.lower())
 
+    return d_list
+
+print(initialize_letters_to_be_guessed("Armageddon"))
 
 # --- FUNCTION 4 ---
 # Write a function that returns the alphabet as a list/tuple.
@@ -66,8 +72,8 @@ if __name__ == "__main__":
     ### --- Test Function 2: initialize_letters_to_be_guessed --- ###
 
     ###Test 2.1###
-    # result = initialize_letters_to_be_guessed("cat")
-    # print(result)  # Expected: {"c", "a", "t"}
+    result = initialize_letters_to_be_guessed("cat")
+    print(result)  # Expected: {"c", "a", "t"}
 
     ###Test 2.2###
     # result = initialize_letters_to_be_guessed("python")
