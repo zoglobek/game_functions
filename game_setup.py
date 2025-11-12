@@ -47,7 +47,10 @@ print(initialize_letters_to_be_guessed("Armageddon"))
 # Write a function that returns the alphabet as a list/tuple.
 # So if the input is "abcde", the function will return ["a", "b", "c", "d", "e"]
 def initialize_alphabet_display(alphabet: str):
-    ...
+    letter_list = []
+    for letter in alphabet:
+        letter_list.append(letter)
+    return letter_list
 
 
 # Test your functions here!
@@ -88,8 +91,8 @@ if __name__ == "__main__":
     # print(result)  # Expected: {"a", "r", "m", "g", "e", "d", "o", "n"}
 
     ###Test 2.5###
-    # result = initialize_letters_to_be_guessed("Ice Cream")
-    # print(result)  # Expected: {"i", "c", "e", "r", "a", "m"} (no spaces)
+    result = initialize_letters_to_be_guessed("Ice Cream")
+    print(result)  # Expected: {"i", "c", "e", "r", "a", "m"} (no spaces)
 
     ### --- Test Function 3: initialize_alphabet_display --- ###
 
