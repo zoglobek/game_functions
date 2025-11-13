@@ -109,14 +109,14 @@ if __name__ == "__main__":
     # print(result)  # Expected: ["a", "b", "c", "d", "e", "f", "g"]
 
     ###Test 3.3 - Hebrew alphabet###
-    # alphabet = "אבגדהוזחטי"
-    # result = initialize_alphabet_display(alphabet)
-    # print(result)  # Expected: ["א", "ב", "ג", "ד", "ה", "ו", "ז", "ח", "ט", "י"]
+    alphabet = "אבגדהוזחטי"
+    result = initialize_alphabet_display(alphabet)
+    print(result)  # Expected: ["א", "ב", "ג", "ד", "ה", "ו", "ז", "ח", "ט", "י"]
 
     ###Test 3.4 - Check return type###
-    # alphabet = "abc"
-    # result = initialize_alphabet_display(alphabet)
-    # print(type(result))  # Expected: <class 'list'> or <class 'tuple'>
+    alphabet = "abc"
+    result = initialize_alphabet_display(alphabet)
+    print(type(result))  # Expected: <class 'list'> or <class 'tuple'>
 
     pass
 

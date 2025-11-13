@@ -2,12 +2,15 @@
 # HANGMAN GAME - INPUT & VALIDATION
 # ========================================
 
+
+
 # --- FUNCTION 1 ---
 # Write a function that asks the user to input a letter.
 # The function will return the user's input (as lowercase).
 
 def get_letter_from_user():
-    ...
+    user_input = input("Please input a letter:\n").lower()
+    return user_input
 
 
 # --- FUNCTION 2 ---
@@ -17,7 +20,11 @@ def get_letter_from_user():
 # (you can use .isalpha())
 
 def is_valid_letter(input_letter):
-    ...
+   if len(input_letter) == 1 and input_letter.isalpha():
+       return True
+   else:
+       return False
+
 
 
 # --- FUNCTION 3 ---
@@ -26,7 +33,15 @@ def is_valid_letter(input_letter):
 # Return True if the letter is in the set, False otherwise.
 
 def is_already_guessed(letter, guessed_letters):
-    ...
+   the_set = set()
+   for char in guessed_letters:
+    the_set.add(char)
+    for note in the_set:
+        if letter.lower() == note:
+            return True
+        else:
+             return False
+
 
 
 # --- FUNCTION 4 ---
@@ -81,8 +96,8 @@ if __name__ == "__main__":
     ### --- Test Function 3: is_already_guessed --- ###
 
     ###Test 3.1###
-    # result = is_already_guessed("a", {"a", "b", "c"})
-    # print(result)  # Expected: True
+    result = is_already_guessed("a", {"a", "b", "c"})
+    print(result)  # Expected: True
 
     ###Test 3.2###
     # result = is_already_guessed("d", {"a", "b", "c"})
