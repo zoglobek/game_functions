@@ -12,9 +12,10 @@ def choose_random_word(word_list):
     # OP1
     # random.choice(...)
 
-    # OP2
-    # random.randrange()
-    ...
+    len_wrd_lst = len(word_list)
+    the_num = random.randrange(len_wrd_lst)
+    the_word = word_list[the_num]
+    return the_word
 
 
 # WILL CREATE DISPLAY OF WORD IN RUNTIME
@@ -22,10 +23,11 @@ def choose_random_word(word_list):
 # # Write a function that creates the initial display for a word.
 # # It should return a string with underscores separated by spaces (e.g., "_ _ _ _").
 # # The number of underscores should match the length of the word.
-# def initialize_secret_word_display(word):
-#     ...
+def initialize_secret_word_display(word):
+    len_line = len(word)
+    return "- " * len_line
 
-
+print(initialize_secret_word_display("potato"))
 # --- FUNCTION 3 ---
 # Write a function that gets a word, and returns a set of all the unique letters in that word.
 # (make sure to lowercase all letters in the word, and dont add white spaces!)
@@ -58,19 +60,19 @@ if __name__ == "__main__":
     ### --- Test Function 1: choose_random_word --- ###
 
     ###Test 1.1###
-    # test_words = ["python", "hangman", "programming"]
-    # result = choose_random_word(test_words)
-    # print(result in test_words)  # Expected: True
-
+    test_words = ["python", "hangman", "programming"]
+    result = choose_random_word(test_words)
+    print(result in test_words)  # Expected: True
+    print(choose_random_word(test_words))
     ###Test 1.2###
     # test_words = ["apple", "banana", "cherry", "date"]
     # result = choose_random_word(test_words)
     # print(result in test_words)  # Expected: True
 
     ###Test 1.3 - Single word list###
-    # test_words = ["onlyword"]
-    # result = choose_random_word(test_words)
-    # print(result)  # Expected: "onlyword"
+    test_words = ["onlyword"]
+    result = choose_random_word(test_words)
+    print(result)  # Expected: "onlyword"
 
     ### --- Test Function 2: initialize_letters_to_be_guessed --- ###
 
