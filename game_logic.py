@@ -1,13 +1,18 @@
 # ========================================
 # HANGMAN GAME - GAME LOGIC
 # ========================================
+from dataclasses import replace
+
 
 # --- FUNCTION 1 ---
 # Write a function that checks if a letter exists in a word.
 # Return True if the letter is in the word, False otherwise.
 
 def check_letter_in_word(letter, word):
-    ...
+    if letter in word:
+        return True
+    else:
+        return False
 
 
 # --- FUNCTION 2 ---
@@ -19,7 +24,17 @@ def check_letter_in_word(letter, word):
 # the function should return "_ y _ _ o _".
 
 def get_hidden_word_with_visible_guessed_letters(word, guessed_letters):
-    ...
+    word_as_list = []
+    for letter in word:
+        word_as_list.append(letter)
+        for guessed_letters in word_as_list:
+            return letter
+        for letter != word_as_list:
+            letter = " _ "
+            return letters
+
+
+
 
 
 # --- FUNCTION 3 ---
@@ -86,8 +101,8 @@ if __name__ == "__main__":
     ### --- Test Function 2: get_hidden_word_with_visible_guessed_letters --- ###
 
     ###Test 2.1###
-    # result = get_hidden_word_with_visible_guessed_letters("cat", {"c"})
-    # print(result)  # Expected: "c _ _"
+    result = get_hidden_word_with_visible_guessed_letters("cat", {"c"})
+    print(result)  # Expected: "c _ _"
 
     ###Test 2.2###
     # result = get_hidden_word_with_visible_guessed_letters("banana", {"a", "n"})
