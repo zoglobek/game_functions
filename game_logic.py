@@ -1,7 +1,7 @@
 # ========================================
 # HANGMAN GAME - GAME LOGIC
 # ========================================
-from dataclasses import replace
+
 
 
 # --- FUNCTION 1 ---
@@ -24,14 +24,17 @@ def check_letter_in_word(letter, word):
 # the function should return "_ y _ _ o _".
 
 def get_hidden_word_with_visible_guessed_letters(word, guessed_letters):
-    word_as_list = []
+    word_as_set = set()
     for letter in word:
-        word_as_list.append(letter)
-        for guessed_letters in word_as_list:
-            return letter
-        for letter != word_as_list:
-            letter = " _ "
-            return letters
+        word_as_set.add(letter)
+        diff = str(word_as_set.difference(guessed_letters))
+        lines = len(diff) * " _ "
+
+
+
+    return f"{guessed_letters}{lines}"
+
+
 
 
 
@@ -42,15 +45,17 @@ def get_hidden_word_with_visible_guessed_letters(word, guessed_letters):
 # It should modify the set in place (set.add("a")).
 
 def update_guessed_letters(letter: str, guessed_letters: set):
-    ...
+    guessed_letters.add(letter)
 
 
 # --- FUNCTION 4 ---
 # Write a function that counts how many times a letter appears in a word.
 # Return the count.
 
-def count_letter_occurrences(letter, word):
-    ...
+def count_letter_occurrences(letter:str, word:str):
+    counter = word.count(letter)
+    return counter
+
 
 
 # --- FUNCTION 5 ---
@@ -105,8 +110,8 @@ if __name__ == "__main__":
     print(result)  # Expected: "c _ _"
 
     ###Test 2.2###
-    # result = get_hidden_word_with_visible_guessed_letters("banana", {"a", "n"})
-    # print(result)  # Expected: "_ a n a n a"
+    result = get_hidden_word_with_visible_guessed_letters("banana", {"a", "n"})
+    print(result)  # Expected: "_ a n a n a"
 
     ###Test 2.3###
     # result = get_hidden_word_with_visible_guessed_letters("hello", {"e", "l"})
@@ -149,7 +154,7 @@ if __name__ == "__main__":
 
     ###Test 4.3###
     # result = count_letter_occurrences("x", "python")
-    # print(result)  # Expected: 0
+    print(result)  # Expected: 0
 
     ###Test 4.4###
     # result = count_letter_occurrences("o", "programming")
