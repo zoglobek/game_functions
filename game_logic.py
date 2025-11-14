@@ -154,7 +154,7 @@ if __name__ == "__main__":
 
     ###Test 4.3###
     # result = count_letter_occurrences("x", "python")
-    print(result)  # Expected: 0
+    # print(result)  # Expected: 0
 
     ###Test 4.4###
     # result = count_letter_occurrences("o", "programming")
