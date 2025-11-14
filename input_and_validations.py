@@ -50,11 +50,17 @@ def is_already_guessed(letter, guessed_letters):
 # Return the valid letter.
 
 def get_valid_guess(guessed_letters):
-    ...
 
 
-# Test your functions here!
+
+
+
+
+
+    # Test your functions here!
 if __name__ == "__main__":
+
+
     ### --- Test Function 1: get_letter_from_user --- ###
     # This function requires user input, so test it manually by uncommenting:
 
@@ -96,8 +102,8 @@ if __name__ == "__main__":
     ### --- Test Function 3: is_already_guessed --- ###
 
     ###Test 3.1###
-    result = is_already_guessed("a", {"a", "b", "c"})
-    print(result)  # Expected: True
+    # result = is_already_guessed("a", {"a", "b", "c"})
+    # print(result)  # Expected: True
 
     ###Test 3.2###
     # result = is_already_guessed("d", {"a", "b", "c"})
@@ -115,9 +121,9 @@ if __name__ == "__main__":
     # This function requires user input, so test it manually by uncommenting:
 
     ###Test 4.1 - Test with empty guessed_letters###
-    # print("Enter a valid letter (any letter should work):")
-    # letter = get_valid_guess(set())
-    # print(f"Valid letter entered: {letter}")  # Expected: the valid letter you entered
+    print("Enter a valid letter (any letter should work):")
+    letter = get_valid_guess(set())
+    print(f"Valid letter entered: {letter}")  # Expected: the valid letter you entered
 
     ###Test 4.2 - Test with some already guessed letters###
     # print("Enter a valid letter that hasn't been guessed (try not to use 'a', 'b', or 'c'):")
