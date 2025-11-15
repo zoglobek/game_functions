@@ -26,10 +26,10 @@ def check_letter_in_word(letter, word):
 def get_hidden_word_with_visible_guessed_letters(word:str, guessed_letters:set):
     new_list = []
     item = str(guessed_letters)
-    x = item.replace(item, " _ ")
+    cover = item.replace(item, " _ ")
     for item in word:
         if item not in guessed_letters:
-            new_list.append(x)
+            new_list.append(cover)
         else:
             new_list.append(item)
     return " ".join(new_list)
@@ -66,7 +66,13 @@ def count_letter_occurrences(letter: str, word: str):
 #       (it will look like this if printed: "a b c̶ d e̶"
 
 def alphabet_display_with_guessed_letters_marked(letters_alphabet, guessed_letters):
-    ...
+    letters_as_string = "".join(letters_alphabet)
+    for item in letters_as_string:
+        for letter in guessed_letters:
+            if item == letter:
+               letters_as_string = letters_as_string.replace(item, item + "\u0336")
+    return letters_as_string
+
 
 
 # --- FUNCTION 6 ---
@@ -101,12 +107,12 @@ if __name__ == "__main__":
     ### --- Test Function 2: get_hidden_word_with_visible_guessed_letters --- ###
 
     ###Test 2.1###
-    result = get_hidden_word_with_visible_guessed_letters("cat", {"c"})
-    print(result)  # Expected: "c _ _"
-
-    ###Test 2.2###
-    result = get_hidden_word_with_visible_guessed_letters("banana", {"a", "n"})
-    print(result)  # Expected: "_ a n a n a"
+    # result = get_hidden_word_with_visible_guessed_letters("cat", {"c"})
+    # print(result)  # Expected: "c _ _"
+    #
+    # ###Test 2.2###
+    # result = get_hidden_word_with_visible_guessed_letters("banana", {"a", "n"})
+    # print(result)  # Expected: "_ a n a n a"
 
     ###Test 2.3###
     # result = get_hidden_word_with_visible_guessed_letters("hello", {"e", "l"})
@@ -161,13 +167,13 @@ if __name__ == "__main__":
     # letters_alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
     # result = alphabet_display_with_guessed_letters_marked(letters_alphabet, {"a", "e", "t"})
     # print(result)  # Expected: "a̶ b c d e̶ f g h i j k l m n o p q r s t̶ u v w x y z"
-
-    ###Test 5.2###
+    #
+    # ###Test 5.2###
     # letters_alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
     # result = alphabet_display_with_guessed_letters_marked(letters_alphabet, set())
     # print(result)  # Expected: "a b c d e f g h i j k l m n o p q r s t u v w x y z"
-
-    ###Test 5.3###
+    #
+    # ###Test 5.3###
     # letters_alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
     # result = alphabet_display_with_guessed_letters_marked(letters_alphabet, {"z", "a"})
     # print(result)  # Expected: "a̶ b c d e f g h i j k l m n o p q r s t u v w x y z̶"
