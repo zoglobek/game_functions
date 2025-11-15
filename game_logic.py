@@ -23,21 +23,16 @@ def check_letter_in_word(letter, word):
 # For example: if the word is "python", and the guessed letters are {"a", "b", "f", "y", "o"}
 # the function should return "_ y _ _ o _".
 
-def get_hidden_word_with_visible_guessed_letters(word, guessed_letters):
-    word_as_set = set()
-    for letter in word:
-        word_as_set.add(letter)
-        diff = str(word_as_set.difference(guessed_letters))
-        lines = len(diff) * " _ "
-
-
-
-    return f"{guessed_letters}{lines}"
-
-
-
-
-
+def get_hidden_word_with_visible_guessed_letters(word:str, guessed_letters:set):
+    new_list = []
+    item = str(guessed_letters)
+    x = item.replace(item, " _ ")
+    for item in word:
+        if item not in guessed_letters:
+            new_list.append(x)
+        else:
+            new_list.append(item)
+    return " ".join(new_list)
 
 
 # --- FUNCTION 3 ---
@@ -52,7 +47,7 @@ def update_guessed_letters(letter: str, guessed_letters: set):
 # Write a function that counts how many times a letter appears in a word.
 # Return the count.
 
-def count_letter_occurrences(letter:str, word:str):
+def count_letter_occurrences(letter: str, word: str):
     counter = word.count(letter)
     return counter
 
