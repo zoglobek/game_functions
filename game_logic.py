@@ -119,8 +119,8 @@ if __name__ == "__main__":
     # print(result)  # Expected: "_ e l l _"
 
     ###Test 2.4###
-    # result = get_hidden_word_with_visible_guessed_letters("python", {"y", "o"})
-    # print(result)  # Expected: "_ y _ _ o _"
+    result = get_hidden_word_with_visible_guessed_letters("python", {"y", "o"})
+    print(result)  # Expected: "_ y _ _ o _"
 
     ###Test 2.5###
     # result = get_hidden_word_with_visible_guessed_letters("word", set())
