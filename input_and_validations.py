@@ -55,7 +55,10 @@ def get_valid_guess(guessed_letters):
         else:
             break
     if is_valid_letter(input_letter) == False:
-        return get_valid_guess(guessed_letters)
+        if is_already_guessed(input_letter,guessed_letters) == True:
+            input_letter
+    return get_valid_guess(guessed_letters)
+
 
 
 
