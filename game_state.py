@@ -7,8 +7,14 @@
 # The player wins when there are no more letters in the hidden_letters set.
 # Return True if won, False otherwise.
 
-def check_win_condition(hidden_letters):
-    ...
+def check_win_condition(hidden_letters:set):
+    zero_set = set()
+    win = zero_set.issuperset(hidden_letters)
+    if win:
+        return True
+    else:
+        return False
+
 
 
 # --- FUNCTION 2 ---
@@ -34,16 +40,16 @@ if __name__ == "__main__":
     ### --- Test Function 1: check_win_condition --- ###
 
     ###Test 1.1 - Empty set (all letters guessed)###
-    # result = check_win_condition(set())
-    # print(result)  # Expected: True
+    result = check_win_condition(set())
+    print(result)  # Expected: True
 
-    ###Test 1.2 - Set with letters remaining###
-    # result = check_win_condition({"p", "y", "n"})
-    # print(result)  # Expected: False
+    ##Test 1.2 - Set with letters remaining###
+    result = check_win_condition({"p", "y", "n"})
+    print(result)  # Expected: False
 
-    ###Test 1.3 - Set with one letter remaining###
-    # result = check_win_condition({"x"})
-    # print(result)  # Expected: False
+    ##Test 1.3 - Set with one letter remaining###
+    result = check_win_condition({"x"})
+    print(result)  # Expected: False
 
     ### --- Test Function 2: check_lose_condition --- ###
 
