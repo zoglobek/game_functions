@@ -81,7 +81,7 @@ def alphabet_display_with_guessed_letters_marked(letters_alphabet, guessed_lette
 # (The function will not return anything!)
 
 def update_letters_to_be_guessed(hidden_letters, letter):
-    ...
+    hidden_letters.discard(letter)
 
 
 # Test your functions here!
