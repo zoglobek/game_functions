@@ -7,9 +7,9 @@
 # Use the stages from the "ascii_art.py" file.
 
 from common.ascii_art import hangman_7_stages
+from game_logic import alphabet_display_with_guessed_letters_marked
 
-
-def show_hangman(incorrect_guesses, hangman_art: list[str] = /):
+def show_hangman(incorrect_guesses, hangman_art: list[str] = hangman_7_stages):
     gallows_stage = hangman_art[incorrect_guesses]
     return gallows_stage
 
