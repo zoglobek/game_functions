@@ -7,6 +7,7 @@
 # Use the stages from the "ascii_art.py" file.
 
 from ascii_art import hangman_7_stages
+from game_function.game_state import is_game_over
 from game_logic import alphabet_display_with_guessed_letters_marked
 from game_logic import get_hidden_word_with_visible_guessed_letters
 
@@ -38,7 +39,8 @@ def display_game_status(letters_alphabet, guessed_letters, hidden_word, attempts
 # Example: "Congratulations! You guessed the word: python"
 
 def show_win_message(word):
-    ...
+    print(f"You Won Congratulations!!! You guessed the hidden word: {word}")
+
 
 
 # --- FUNCTION 4 ---
@@ -46,7 +48,7 @@ def show_win_message(word):
 # Example: "Game Over! The word was: python"
 
 def show_lose_message(word):
-    ...
+    print(f"Game Over!\nThe word was: {word}")
 
 
 # Test your functions here!
@@ -72,10 +74,10 @@ if __name__ == "__main__":
     ### --- Test Function 2: display_game_status --- ###
 
     ###Test 2.1 - Mid-game status###
-    letters_alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
-    guessed_letters = {"a", "e", "i", "t"}
-    hidden_word = "but"
-    display_game_status(letters_alphabet, guessed_letters, hidden_word, 5)
+    # letters_alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+    # guessed_letters = {"a", "e", "i", "t"}
+    # hidden_word = "but"
+    # display_game_status(letters_alphabet, guessed_letters, hidden_word, 5)
     # Expected output:
     # Word: _ _ t
     # Letters: a̶ b c d e̶ f g h i̶ j k l m n o p q r s t̶ u v w x y z
