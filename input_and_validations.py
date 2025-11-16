@@ -49,11 +49,13 @@ def is_already_guessed(letter, guessed_letters):
 
 def get_valid_guess(guessed_letters):
     input_letter = get_letter_from_user()
-    if is_valid_letter(input_letter) == True:
+    while is_valid_letter(input_letter) == True:
         if is_already_guessed(input_letter, guessed_letters) == False:
             return input_letter
-        elif is_already_guessed(input_letter, guessed_letters) == True:
-            get_valid_guess(guessed_letters)
+        else:
+            break
+    if is_valid_letter(input_letter) == False:
+        return get_valid_guess(guessed_letters)
 
 
 
@@ -128,13 +130,13 @@ if __name__ == "__main__":
     # print(f"Valid letter entered: {letter}")  # Expected: the valid letter you entered
 
     ##Test 4.2 - Test with some already guessed letters###
-    print("Enter a valid letter that hasn't been guessed (try not to use 'a', 'b', or 'c'):")
-    letter = get_valid_guess({"a", "b", "c"})
-    print(f"Valid letter entered: {letter}")  # Expected: the valid letter you entered (not a, b, or c)
+    # print("Enter a valid letter that hasn't been guessed (try not to use 'a', 'b', or 'c'):")
+    # letter = get_valid_guess({"a", "b", "c"})
+    # print(f"Valid letter entered: {letter}")  # Expected: the valid letter you entered (not a, b, or c)
 
-    # ##Test 4.3 - Test validation (try entering invalid input first)###
-    # print("Try entering: '123', 'abc', or an already guessed letter, then enter a valid one:")
-    # letter = get_valid_guess({"x", "y", "z"})
-    # print(f"Valid letter entered: {letter}")  # Expected: keeps asking until you enter a valid, unguessed letter
+    ##Test 4.3 - Test validation (try entering invalid input first)###
+    print("Try entering: '123', 'abc', or an already guessed letter, then enter a valid one:")
+    letter = get_valid_guess({"x", "y", "z"})
+    print(f"Valid letter entered: {letter}")  # Expected: keeps asking until you enter a valid, unguessed letter
 
     pass
