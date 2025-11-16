@@ -7,10 +7,11 @@
 # Use the stages from the "ascii_art.py" file.
 
 from common.ascii_art import hangman_7_stages
-
+from game_logic import alphabet_display_with_guessed_letters_marked
 
 def show_hangman(incorrect_guesses, hangman_art: list[str] = hangman_7_stages):
-    ...
+    gallows_stage = hangman_art[incorrect_guesses]
+    return gallows_stage
 
 
 # --- FUNCTION 2 ---
@@ -50,7 +51,7 @@ if __name__ == "__main__":
     ### --- Test Function 1: show_hangman --- ###
 
     ###Test 1.1 - No incorrect guesses (empty gallows)###
-    # print(show_hangman(0))
+    print(show_hangman(0))
     # Expected: empty gallows (stage 0)
 
     ###Test 1.2 - Three incorrect guesses###
