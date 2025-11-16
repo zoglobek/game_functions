@@ -35,7 +35,7 @@ def is_valid_letter(input_letter):
 
 def is_already_guessed(letter, guessed_letters):
     new_set = set(letter)
-    if new_set.issubset(guessed_letters) == True:
+    if new_set.issubset(guessed_letters):
         return True
     else:
         return False
