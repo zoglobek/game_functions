@@ -23,8 +23,10 @@ def check_win_condition(hidden_letters:set):
 # Return True if lost, False otherwise.
 
 def check_lose_condition(attempts_remaining):
-    ...
-
+    if attempts_remaining == 0:
+        return True
+    else:
+        return False
 
 # --- FUNCTION 3 ---
 # Write a function that checks if the game is over (either won or lost).
@@ -39,35 +41,35 @@ def is_game_over(hidden_letters, attempts_remaining):
 if __name__ == "__main__":
     ### --- Test Function 1: check_win_condition --- ###
 
-    ###Test 1.1 - Empty set (all letters guessed)###
-    result = check_win_condition(set())
-    print(result)  # Expected: True
-
-    ##Test 1.2 - Set with letters remaining###
-    result = check_win_condition({"p", "y", "n"})
-    print(result)  # Expected: False
-
-    ##Test 1.3 - Set with one letter remaining###
-    result = check_win_condition({"x"})
-    print(result)  # Expected: False
+    # ###Test 1.1 - Empty set (all letters guessed)###
+    # result = check_win_condition(set())
+    # print(result)  # Expected: True
+    #
+    # ##Test 1.2 - Set with letters remaining###
+    # result = check_win_condition({"p", "y", "n"})
+    # print(result)  # Expected: False
+    #
+    # ##Test 1.3 - Set with one letter remaining###
+    # result = check_win_condition({"x"})
+    # print(result)  # Expected: False
 
     ### --- Test Function 2: check_lose_condition --- ###
 
     ###Test 2.1 - Zero attempts remaining (lost)###
-    # result = check_lose_condition(0)
-    # print(result)  # Expected: True
+    result = check_lose_condition(0)
+    print(result)  # Expected: True
 
-    ###Test 2.2 - Some attempts remaining###
-    # result = check_lose_condition(3)
-    # print(result)  # Expected: False
+    ##Test 2.2 - Some attempts remaining###
+    result = check_lose_condition(3)
+    print(result)  # Expected: False
 
-    ###Test 2.3 - One attempt remaining###
-    # result = check_lose_condition(1)
-    # print(result)  # Expected: False
+    ##Test 2.3 - One attempt remaining###
+    result = check_lose_condition(1)
+    print(result)  # Expected: False
 
-    ###Test 2.4 - Many attempts remaining###
-    # result = check_lose_condition(6)
-    # print(result)  # Expected: False
+    ##Test 2.4 - Many attempts remaining###
+    result = check_lose_condition(6)
+    print(result)  # Expected: False
 
     ### --- Test Function 3: is_game_over --- ###
 
