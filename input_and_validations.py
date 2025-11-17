@@ -19,7 +19,7 @@ def get_letter_from_user():
 # Return True if valid, False otherwise.
 # (you can use .isalpha())
 
-def is_valid_letter(input_letter):
+def is_valid_letter(input_letter:str):
    if input_letter.isalpha():
     if len(input_letter) == 1:
        return True
@@ -33,7 +33,7 @@ def is_valid_letter(input_letter):
 # The function receives a letter and a set of guessed letters.
 # Return True if the letter is in the set, False otherwise.
 
-def is_already_guessed(letter, guessed_letters):
+def is_already_guessed(letter:str, guessed_letters:set):
     new_set = set(letter)
     if new_set.issubset(guessed_letters):
         return True
@@ -47,7 +47,7 @@ def is_already_guessed(letter, guessed_letters):
 # Use the previous functions (get_letter_from_user, is_valid_letter, is_already_guessed).
 # Return the valid letter.
 
-def get_valid_guess(guessed_letters):
+def get_valid_guess(guessed_letters:set):
     input_letter = get_letter_from_user()
     while is_valid_letter(input_letter) == True:
         if is_already_guessed(input_letter, guessed_letters) == False:

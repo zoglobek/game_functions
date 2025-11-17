@@ -28,7 +28,7 @@ def show_hangman(incorrect_guesses, hangman_art: list[str] = hangman_7_stages):
 #   This function requires the alphabet_display_with_guessed_letters_marked function
 #   from game_logic.py to work properly
 
-def display_game_status(letters_alphabet, guessed_letters, hidden_word, attempts_remain):
+def display_game_status(letters_alphabet:list, guessed_letters:set, hidden_word:str, attempts_remain:int):
     print(f"{show_hangman(7 - attempts_remain)}")
     print(f"{get_hidden_word_with_visible_guessed_letters(hidden_word, guessed_letters)}")
     print(f"{alphabet_display_with_guessed_letters_marked(letters_alphabet,guessed_letters)}")
@@ -39,7 +39,7 @@ def display_game_status(letters_alphabet, guessed_letters, hidden_word, attempts
 # Write a function that displays a win message.
 # Example: "Congratulations! You guessed the word: python"
 
-def show_win_message(word):
+def show_win_message(word:str):
     print(f"You Won Congratulations!!! You guessed the hidden word: {word}")
 
 
@@ -48,7 +48,7 @@ def show_win_message(word):
 # Write a function that displays a lose message.
 # Example: "Game Over! The word was: python"
 
-def show_lose_message(word):
+def show_lose_message(word:str):
     print(f"Game Over!\nThe word was: {word}")
 
 

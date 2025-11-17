@@ -8,7 +8,7 @@
 # Write a function that checks if a letter exists in a word.
 # Return True if the letter is in the word, False otherwise.
 
-def check_letter_in_word(letter, word):
+def check_letter_in_word(letter:str, word:str):
     if letter in word:
         return True
     else:

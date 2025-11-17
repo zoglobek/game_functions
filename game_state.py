@@ -22,7 +22,7 @@ def check_win_condition(hidden_letters:set):
 # The player loses when attempts_remaining reaches 0.
 # Return True if lost, False otherwise.
 
-def check_lose_condition(attempts_remaining):
+def check_lose_condition(attempts_remaining:int):
     if attempts_remaining == 0:
         return True
     else:
@@ -33,7 +33,7 @@ def check_lose_condition(attempts_remaining):
 # Use the previous two functions.
 # Return True if game is over, False otherwise.
 
-def is_game_over(hidden_letters, attempts_remaining):
+def is_game_over(hidden_letters:set, attempts_remaining:int):
     if check_win_condition(hidden_letters) == True or check_lose_condition(attempts_remaining) == True:
         return True
     else:
