@@ -30,7 +30,7 @@ def show_hangman(incorrect_guesses, hangman_art: list[str] = hangman_7_stages):
 
 def display_game_status(letters_alphabet:list, guessed_letters:set, hidden_word:str, attempts_remaining:int):
     print(f"{show_hangman(7 - attempts_remaining)}")
-    print(f"{get_hidden_word_with_visible_guessed_letters(hidden_word, guessed_letters)}")
+    print(f"{get_hidden_word_with_visible_guessed_letters(hidden_word, guessed_letters)}\n\n")
     print(f"{alphabet_display_with_guessed_letters_marked(letters_alphabet,guessed_letters)}")
     print(f"attempts remaining {attempts_remaining}")
 
