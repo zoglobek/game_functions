@@ -28,11 +28,11 @@ def show_hangman(incorrect_guesses, hangman_art: list[str] = hangman_7_stages):
 #   This function requires the alphabet_display_with_guessed_letters_marked function
 #   from game_logic.py to work properly
 
-def display_game_status(letters_alphabet:list, guessed_letters:set, hidden_word:str, attempts_remain:int):
-    print(f"{show_hangman(7 - attempts_remain)}")
+def display_game_status(letters_alphabet:list, guessed_letters:set, hidden_word:str, attempts_remaining:int):
+    print(f"{show_hangman(7 - attempts_remaining)}")
     print(f"{get_hidden_word_with_visible_guessed_letters(hidden_word, guessed_letters)}")
     print(f"{alphabet_display_with_guessed_letters_marked(letters_alphabet,guessed_letters)}")
-    print(f"attempts remaining {attempts_remain}")
+    print(f"attempts remaining {attempts_remaining}")
 
 
 # --- FUNCTION 3 ---
@@ -74,12 +74,12 @@ if __name__ == "__main__":
     #
     ### --- Test Function 2: display_game_status --- ###
 
-    ###Test 2.1 - Mid-game status###
-    letters_alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
-    guessed_letters = {"a", "e", "i", "t"}
-    hidden_word = "but"
-    display_game_status(letters_alphabet, guessed_letters, hidden_word, 5)
-    # Expected output:
+    # ###Test 2.1 - Mid-game status###
+    # letters_alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+    # guessed_letters = {"a", "e", "i", "t"}
+    # hidden_word = "but"
+    # display_game_status(letters_alphabet, guessed_letters, hidden_word, 5)
+    # # Expected output:
     # Word: _ _ t
     # Letters: a̶ b c d e̶ f g h i̶ j k l m n o p q r s t̶ u v w x y z
     # Attempts remaining: 5

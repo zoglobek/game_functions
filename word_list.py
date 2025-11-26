@@ -22,8 +22,14 @@ def randomizer():
 
 def word_of_game():
     chosen_word = word_list[gamedata.get("num")]
-    return gamedata.update({"chosen_word": chosen_word})
+    gamedata.update({"chosen_word": chosen_word})
 
-if __name__ == "__main__":
+
+def full_game_data():
     randomizer()
     word_of_game()
+    return gamedata.get("chosen_word")
+
+
+if __name__ == "__main__":
+    print(full_game_data())
