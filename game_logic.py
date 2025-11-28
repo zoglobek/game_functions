@@ -26,7 +26,7 @@ def check_letter_in_word(letter:str, word:str):
 def get_hidden_word_with_visible_guessed_letters(word:str, guessed_letters:set):
     new_list = []
     item = str(guessed_letters)
-    cover = item.replace(item, " _ ")
+    cover = item.replace(item, "_")
     for item in word:
         if item not in guessed_letters:
             new_list.append(cover)

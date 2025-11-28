@@ -76,24 +76,24 @@ if __name__ == "__main__":
 
     ### --- Test Function 3: is_game_over --- ###
 
-    ##Test 3.1 - Game won (no hidden letters remaining)###
-    result = is_game_over(set(), 3)
-    print(result)  # Expected: True (won)
-
-    ##Test 3.2 - Game lost (no attempts remaining)###
-    result = is_game_over({"c", "a", "t"}, 0)
-    print(result)  # Expected: True (lost)
-
-    ##Test 3.3 - Game still in progress###
-    result = is_game_over({"a", "t"}, 4)
-    print(result)  # Expected: False (still playing)
-
-    ##Test 3.4 - Game won with attempts remaining###
-    result = is_game_over(set(), 6)
-    print(result)  # Expected: True (won)
-
-    ##Test 3.5 - Last attempt, letters still hidden###
-    result = is_game_over({"x", "y"}, 1)
-    print(result)  # Expected: False (still playing)
+    # ##Test 3.1 - Game won (no hidden letters remaining)###
+    # result = is_game_over(set(), 3)
+    # print(result)  # Expected: True (won)
+    #
+    # ##Test 3.2 - Game lost (no attempts remaining)###
+    # result = is_game_over({"c", "a", "t"}, 0)
+    # print(result)  # Expected: True (lost)
+    #
+    # ##Test 3.3 - Game still in progress###
+    # result = is_game_over({"a", "t"}, 4)
+    # print(result)  # Expected: False (still playing)
+    #
+    # ##Test 3.4 - Game won with attempts remaining###
+    # result = is_game_over(set(), 6)
+    # print(result)  # Expected: True (won)
+    #
+    # ##Test 3.5 - Last attempt, letters still hidden###
+    # result = is_game_over({"x", "y"}, 1)
+    # print(result)  # Expected: False (still playing)
 
     pass

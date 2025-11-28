@@ -28,9 +28,8 @@ def show_hangman(incorrect_guesses, hangman_art: list[str] = hangman_7_stages):
 #   This function requires the alphabet_display_with_guessed_letters_marked function
 #   from game_logic.py to work properly
 
-def display_game_status(letters_alphabet:list, guessed_letters:set, hidden_word:str, attempts_remaining:int):
-    print(f"{show_hangman(7 - attempts_remaining)}")
-    print(f"{get_hidden_word_with_visible_guessed_letters(hidden_word, guessed_letters)}\n\n")
+def display_game_status(incorrect_guesses:int, letters_alphabet:list, guessed_letters:set, game_word:str, attempts_remaining:int):
+    print(f"{show_hangman(incorrect_guesses)}\n{get_hidden_word_with_visible_guessed_letters(game_word, guessed_letters)} ")
     print(f"{alphabet_display_with_guessed_letters_marked(letters_alphabet,guessed_letters)}")
     print(f"attempts remaining {attempts_remaining}")
 
