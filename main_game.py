@@ -20,11 +20,11 @@ def main():
     attempts_remaining = 7
     incorrect_guesses = 0
     while not is_game_over(hidden_letters, attempts_remaining):
-        print(display_game_status(incorrect_guesses, letters_alphabet,
+        display_game_status(incorrect_guesses, letters_alphabet,
                                   guessed_letters,
                                   game_word,
                                   attempts_remaining
-                                  ))
+                                  )
         letter = get_valid_guess(guessed_letters)
         update_guessed_letters(letter, guessed_letters)
         if check_letter_in_word(letter,word):
