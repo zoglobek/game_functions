@@ -7,7 +7,6 @@
 # Use the stages from the "ascii_art.py" file.
 
 from ascii_art import hangman_7_stages
-from game_function.game_state import is_game_over
 from game_logic import alphabet_display_with_guessed_letters_marked
 from game_logic import get_hidden_word_with_visible_guessed_letters
 
