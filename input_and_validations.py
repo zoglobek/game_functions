@@ -10,7 +10,7 @@
 
 def get_letter_from_user():
     user_input = input("Please input a letter:\n").lower()
-    return user_input
+    return str(user_input)
 
 
 # --- FUNCTION 2 ---

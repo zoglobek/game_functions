@@ -10,8 +10,10 @@ from game_state import check_win_condition
 from game_state import check_lose_condition
 from word_list import full_game_data
 
+letters_alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t",
+                    "u", "v", "w", "x", "y", "z"]
 
-letters_alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+
 def main():
     word = full_game_data()
     game_word = initialize_secret_word_display(word)
@@ -21,14 +23,15 @@ def main():
     incorrect_guesses = 0
     while not is_game_over(hidden_letters, attempts_remaining):
         display_game_status(incorrect_guesses, letters_alphabet,
-                                  guessed_letters,
-                                  game_word,
-                                  attempts_remaining
-                                  )
+                            guessed_letters,
+                            word,
+                            attempts_remaining
+                            )
         letter = get_valid_guess(guessed_letters)
         update_guessed_letters(letter, guessed_letters)
-        if check_letter_in_word(letter,word):
-            print("\n",alphabet_display_with_guessed_letters_marked(letters_alphabet, guessed_letters))
+        if check_letter_in_word(letter, word):
+            print(f"{alphabet_display_with_guessed_letters_marked(letters_alphabet, guessed_letters)}\n{get_hidden_word_with_visible_guessed_letters(game_word,guessed_letters)}")
+
 
         else:
             attempts_remaining -= 1
