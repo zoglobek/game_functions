@@ -1,10 +1,12 @@
+import sys
+sys.path.append(".")
 from display_and_feedback import display_game_status
 from display_and_feedback import show_win_message
 from display_and_feedback import show_lose_message
-from game_function.game_logic import update_guessed_letters, check_letter_in_word, \
+from game_logic import update_guessed_letters, check_letter_in_word, \
     get_hidden_word_with_visible_guessed_letters, alphabet_display_with_guessed_letters_marked
-from game_function.game_setup import initialize_secret_word_display
-from game_function.input_and_validations import get_valid_guess
+from game_setup import initialize_secret_word_display
+from input_and_validations import get_valid_guess
 from game_state import is_game_over
 from game_state import check_win_condition
 from game_state import check_lose_condition
